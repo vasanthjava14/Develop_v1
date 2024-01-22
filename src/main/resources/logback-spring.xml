@@ -1,0 +1,22 @@
+<configuration>
+
+    <!-- Define the appender (handler) -->
+    <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>logfile.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Set the root logger level to INFO and link it to the appender -->
+    <root level="info">
+        <appender-ref ref="fileAppender" />
+    </root>
+
+    <!-- Define a logger for the LogController class -->
+    <logger name="com.example.LogController" level="info">
+        <appender-ref ref="fileAppender" />
+    </logger>
+
+</configuration>
